@@ -1,3 +1,3 @@
 # article/personal
 
-[article/personal/career-simple.md](career-simple.md)
+- [article/personal/career-simple.md](career-simple.md)

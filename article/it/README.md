@@ -1,3 +1,3 @@
 # article/it
 
-[article/it/pc/](pc)
+- [article/it/pc/](pc)

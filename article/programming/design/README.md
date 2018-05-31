@@ -1,3 +1,3 @@
 # article/programming/design
 
-[article/programming/design/naming.md](naming.md)
+- [article/programming/design/naming.md](naming.md)
