@@ -47,12 +47,6 @@ tag = programming, android, firebase, fcm, cloud-message
     - 알림메시지 축소형
 - 포트 수신시 5228, 5229, 5230
 
-## android setting
-- 메시지처리, 토큰처리, 기본아이콘/색상, 채널(8.0) 설정
-- 주제 메시지 전송
-- 기기 그룹으로 전송
-- 업스트림 메시지 전송
-
 ## admin sdk
 - java, node.js, python, go
 - message
@@ -79,10 +73,6 @@ tag = programming, android, firebase, fcm, cloud-message
 - messaging/server-unavailable fcm-서버문제
 - messaging/internal-error fcm-서버문제
 - messaging/unknown-error fcm-서버문제
-
-## service process
-- 앱에서 부터 token 저장
-- 결과가 토큰 오류인경우 토큰 삭제
 
 ## google cloud fcm api console setting
 - "com.google.firebase.messaging.FirebaseMessagingException: Firebase Cloud Messaging API has not been used in project 230671892470 before or it is disabled. Enable it by visiting - https://console.developers.google.com/apis/api/fcm.googleapis.com/overview?project=value then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."

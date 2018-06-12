@@ -15,40 +15,35 @@ tag = programming, system, aws
 ## 디비관리 rds-mysql 5.7
 - rds t2.small 0.052 (0.052 * 750 = $39.0)
 
-## 도메인관리 route53(domain) https
-
-## 방화벽관리 security-group
-
-## 배포관리 beanstalk, elb, auto-scaling
-
-## 로그관리
-- s3 storage, cloudwatch
-
-
-# aws setting
-
-## rds
+### rds setting
 - mysql5.7.21 t2.micro(free) 1cpu 1Gram, 20GB GPSSD
 - instance-id: service-mysql 
 - vpc, subnet: default, public-access yes, ap-northeast-2a, new vpc security group
 - db-name: {name}, port: 3306, backup days, 21:00 utc, monitor disable, log disable, maintenance disable
 
-## beanstalk
-- web java, name: {name}
-- free tire t2.micro(free), security-group 80, 2222, rolling: all at once, keypair, monitor, network: vpc public subnet
-- chmod 400 mykey.pem
-- ssh -i mykey.pem ec2-user@1.1.1.1
-
-### procfile
-- java_opts -Duser.timezone=Asia/Seoul -Dfile.encoding=UTF-8 -Xms2g -Xmx2g
-
-## route53
+## 도메인관리 route53(domain) https
+### route53 setting
 - create host zone {domain}.com.
 - ns soa 수정, 삭제하지 말것.
 - 해당 서비스 name server 변경.
 - create A레코드: name({name}), type(A-ipv4), value(ip)
 - create CNAME: {sub-name}.{domain-name}.com, CNAME, {name}.ap-northeast-2.elasticbeanstalk.com
 - domain godaddy(ttl 1hour) 네임서버 aws 로 변경(ttl 1day) 
+
+## 방화벽관리 security-group
+
+## 배포관리 beanstalk, elb, auto-scaling
+### beanstalk setting
+- web java, name: {name}
+- free tire t2.micro(free), security-group 80, 2222, rolling: all at once, keypair, monitor, network: vpc public subnet
+- chmod 400 mykey.pem
+- ssh -i mykey.pem ec2-user@1.1.1.1
+
+### beanstalk procfile
+- java_opts -Duser.timezone=Asia/Seoul -Dfile.encoding=UTF-8 -Xms2g -Xmx2g
+
+## 로그관리
+- s3 storage, cloudwatch
 
 ## price
 - 월비용 10000 $ / 720 hour = 13 $/hour
