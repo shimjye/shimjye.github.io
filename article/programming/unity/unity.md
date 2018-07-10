@@ -196,3 +196,7 @@ void OnApplicationFocus( bool focusStatus)
 - Time.time 시간은 게임을 기준한 시간이 0에서부터 float 로 처리되며
 - 정지시 처리가 필요한 내용은 Update 에서 처리
 - FixedUpdate 는 시간에 따른 값을 계산해 주기때문에 pause시 정지
+
+## unity json lib
+- jsonUtility - unity 라이브러리
+- lightjson (C# mit)

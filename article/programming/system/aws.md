@@ -30,6 +30,11 @@ tag = programming, system, aws
 - create CNAME: {sub-name}.{domain-name}.com, CNAME, {name}.ap-northeast-2.elasticbeanstalk.com
 - domain godaddy(ttl 1hour) 네임서버 aws 로 변경(ttl 1day) 
 
+### email 서비스 MX setting
+- daum 스마트워크 무료 이메일 도메인 설정
+- ses domain 설정, verify
+- route53 mx 설정
+
 ## 방화벽관리 security-group
 
 ## 배포관리 beanstalk, elb, auto-scaling

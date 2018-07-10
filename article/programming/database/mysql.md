@@ -5,6 +5,26 @@ description = 정리자료
 tag = programming, database, mysql
 -->
 
+## docker
+- https://hub.docker.com/r/mysql/mysql-server/
+
+```
+$ docker run --name=mysql1 -p 3306:3306 -d mysql/mysql-server:5.7
+$ docker logs mysql1 2>&1 | grep GENERATED
+$ docker exec -it mysql1 mysql -uroot -p
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';
+```
+
+## user setting
+
+```
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+mysql> use mysql;
+mysql> select host, user from user;
+mysql> grant all privileges on *.* to 'root'@'172.17.%' identified by 'password';
+mysql> flush privileges;
+```
+
 ## setting
 - https://dev.mysql.com/doc/refman/5.7/en/charset-unicode-utf8mb4.html utfmb4
 - ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='';
@@ -20,16 +40,6 @@ tag = programming, database, mysql
 `use_yn` int(10) NOT NULL DEFAULT '0' COMMENT '사용yn 0:n, 1:y',
 `order_value` int(10) NOT NULL DEFAULT '0' COMMENT '순서값 asc',
 `type_code` int(10) NOT NULL DEFAULT '0' COMMENT '타입',
-```
-
-## user setting
-
-```
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
-mysql> use mysql;
-mysql> select host, user from user;
-mysql> grant all privileges on *.* to 'root'@'172.17.%' identified by 'password';
-mysql> flush privileges;
 ```
 
 ## auto increment update

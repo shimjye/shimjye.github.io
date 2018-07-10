@@ -21,7 +21,6 @@ if(ii.getIconWidth() == -1&&ii.getIconHeight() == -1 ) {
 ### 자바스크립트
 
 - img 태그에 넣어 오류 확인
-- 참고 http://www.okjsp.net/seq/76581
 
 ## 이미지 크기 - 자바스크립트
 

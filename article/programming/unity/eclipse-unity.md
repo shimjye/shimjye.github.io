@@ -5,7 +5,17 @@ description = 조금 오래된 자료
 tag = programming, unity, eclipse
 -->
 
-## 이클립스 프로젝트만들기
+- 오래된 자료 업데이트 필요
+
+## project-structure
+- {name}
+    - {name}-android adt-project
+    - {name}-unity unity-project
+    - {name}-work project-workspace
+    - unity-buile/{name}-androidu unity-export
+- cpbuild.sh
+
+## 이클립스 프로젝트만들기 old
 
 - 최소버전 4.0 적용중, 최고버전 6.0 인 시점
 - 프로젝트 NamingRule 패키지 com.shimjye.android.namingrule
@@ -13,7 +23,7 @@ tag = programming, unity, eclipse
 - target sdk 4.0 - 3.2 api13(Honeycomb) for admob
 - compile 4.0
 
-## 유니티 세팅
+## 유니티 세팅 old
 
 - top view xz-plane(x-axis 90 rotation), back xy-plane(-z axis)
     * 중력값을 사용하기 위해서는 이에 따르는 뷰를 사용.
@@ -25,7 +35,7 @@ tag = programming, unity, eclipse
 - orther settings>Identification>bundle identifier com.sootnoon.android.namingrule
 - minimum api level api10
 
-## scm 설정
+## scm 설정 old
 
 ### eclipse
 
@@ -44,10 +54,16 @@ tag = programming, unity, eclipse
 
 ## 빌드
 
-- 유니티에서 android 프로젝트 export NamingRuleU 로 export 됨
-- bin 과 lib 경로 복사
-- lib 에 admob 라이브러리는 유니티에서 나온 파일과 이클립스 프로젝트 설정된 파일과 충돌로 삭제처리하여 이클립스 프로젝트 설정을 사용함
-- android assets/bin libs/unity-classes.jar libs/armeabi-v7a svn ignore 추가
+- 유니티에서 android 프로젝트 export unity-build/{name}-androidu 로 export 됨
+- unity build asset 복사
+```
+rm -rf ./{name}-android/libs
+rm -rf ./{name}-android/src/main/libs
+rm -rf ./{name}-android/src/main/jniLibs
+cp -r ./unity-build/{name}-androidu/libs ./{name}-android
+cp -r ./unity-build/{name}-androidu/src/main/libs ./{name}-android/src/main
+cp -r ./unity-build/{name}-androidu/src/main/jniLibs ./{name}-android/src/main
+```
 
 ## 안드로이드 배포시 사용 이미지 사이즈
 

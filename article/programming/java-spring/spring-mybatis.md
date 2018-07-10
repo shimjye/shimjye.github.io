@@ -72,7 +72,3 @@ Select Last_insert_id();
 - Lt gt 문자<![cdata[]]>사용 가능
 - Param, result map 값 java.util.HashMap 동의어
 - Param result VO 클래스 맵핑가능
-
-## 참조
-
-- http://blog.naver.com/PostView.nhn?blogId=writer0713&logNo=220099757469
