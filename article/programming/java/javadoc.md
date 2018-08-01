@@ -1,8 +1,8 @@
 # Eclipse Javadoc
 
 <!--
-description = 조금 오래된 자료
-tag = programming, tool, eclipse
+description = 정리자료
+tag = programming, tool, java, eclipse
 -->
 
 ## javadoc 설정

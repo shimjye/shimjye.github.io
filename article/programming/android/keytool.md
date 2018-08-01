@@ -1,8 +1,8 @@
 # Java keytool
 
 <!--
-description = 조금 오래된 자료
-tag = programming, android, keytool
+description = 정리자료
+tag = programming, android, java, keytool
 -->
 
 ## key 생성

@@ -1,8 +1,8 @@
 # Javascript 이미지 처리
 
 <!--
-description = 조금 오래된 자료
-tag = programming, javascript, image
+description = 정리자료
+tag = programming, design, javascript, java, image
 -->
 
 ## 이미지 파일확인

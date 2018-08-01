@@ -1,7 +1,7 @@
 # note
 
 <!--
-description = note
+description = 정리자료
 tag = programming, ui
 -->
 

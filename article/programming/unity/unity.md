@@ -1,7 +1,7 @@
 # Unity android 기초 소스코드
 
 <!--
-description = 조금 오래된 자료
+description = 정리자료
 tag = programming, unity, android
 -->
 
@@ -13,21 +13,21 @@ tag = programming, unity, android
 private static SaveData s_singleton = null;
 public static SaveData Instance
 {
-	get
-	{
-		if (null == s_singleton)
-		{
-			GameObject obj = new GameObject();
-			obj.name = "SaveData";
-			obj.AddComponent<SaveData>();
-			s_singleton = obj.GetComponent<SaveData>();
-		}
-		return s_singleton;
-	}
+    get
+    {
+        if (null == s_singleton)
+        {
+            GameObject obj = new GameObject();
+            obj.name = "SaveData";
+            obj.AddComponent<SaveData>();
+            s_singleton = obj.GetComponent<SaveData>();
+        }
+        return s_singleton;
+    }
 }
 void Awake()
 {
-	DontDestroyOnLoad( this);
+    DontDestroyOnLoad( this);
 }
 ```
 
@@ -39,135 +39,135 @@ void Awake()
 private static AndroidJavaObject jo
 private static void initJo()
 {
-	if (jo == null )
-	{
-		Debug .Log("call object!!" );
-		AndroidJavaClass jc = new AndroidJavaClass( "com.unity3d.player.UnityPlayer" );
-		jo = jc.GetStatic<AndroidJavaObject>("currentActivity" );
-	}
+    if (jo == null )
+    {
+        Debug .Log("call object!!" );
+        AndroidJavaClass jc = new AndroidJavaClass( "com.unity3d.player.UnityPlayer" );
+        jo = jc.GetStatic<AndroidJavaObject>("currentActivity" );
+    }
 }
 // unity 에서 안드로이드 호출
 public static void CallEvent( string name)
 {
-	if (jo == null )
-	{
-		initJo();
-		if (jo != null )
-		{
-			jo.Call(name);
-		}
-		else
-		{
-			Debug .Log("java object null!!" );
-		}
-	}
-	else
-	{
-		jo.Call(name);
-	}
+    if (jo == null )
+    {
+        initJo();
+        if (jo != null )
+        {
+            jo.Call(name);
+        }
+        else
+        {
+            Debug .Log("java object null!!" );
+        }
+    }
+    else
+    {
+        jo.Call(name);
+    }
 }
 // android 에서 unity 호출
 void sendEventStatus( string eventStatus)
 {
-	Debug .Log("sendEventStatus !!!" );
-	switch (eventStatus)
-	{
-		case "doSomething" :
-			Debug .Log("Do Something !!!" );
-		break ;
-		default : break ;
-	}
+    Debug .Log("sendEventStatus !!!" );
+    switch (eventStatus)
+    {
+        case "doSomething" :
+            Debug .Log("Do Something !!!" );
+        break ;
+        default : break ;
+    }
 }
 ```
 
 ## 유니티 파일 저장 로드
 
 - 피씨의 경우
-    * C:\Users\shimjye\AppData\LocalLow\com_shimjye_android\SpaceWarTopGunU
+    - C:\Users\shimjye\AppData\LocalLow\com_shimjye_android\SpaceWarTopGunU
 - 안드로이드의 경우
-    * Android/Data/패키지 경로에 저장
+    - Android/Data/패키지 경로에 저장
 
 ```
 private readonly static object _lock = new object();
 public static void initFilePath()
 {
-	filePath = Application.persistentDataPath + "/" + appName;
+    filePath = Application.persistentDataPath + "/" + appName;
 }
 // when game has started
 public static void loadGame()
 {
-	if (filePath == null )
-	{
-		initFilePath();
-	}
-	if (!File .Exists(filePath))
-	{
-		Debug.Log(filePath + " file empty..." );
-		return;
-	}
-	lock (_lock)
-	{
-		try
-		{
-			StreamReader sr = new StreamReader(filePath);
-			version = float.Parse(sr.ReadLine());
-			isUsedVibe = bool.Parse(sr.ReadLine());
-			isUsedMusic = bool.Parse(sr.ReadLine());
-			isUsedSound = bool.Parse(sr.ReadLine());
-			nick = sr.ReadLine();
-			saveDate = DateTime.Parse(sr.ReadLine());
-			sr.Close();
-		}
-		catch (IOException )
-		{
-			// load from backup
-			StreamReader sr = new StreamReader(filePath + ".bak");
-			version = float.Parse(sr.ReadLine());
-			isUsedVibe = bool.Parse(sr.ReadLine());
-			isUsedMusic = bool.Parse(sr.ReadLine());
-			isUsedSound = bool.Parse(sr.ReadLine());
-			nick = sr.ReadLine();
-			saveDate = DateTime.Parse(sr.ReadLine());
-			sr.Close();
-			// save again
-			StreamWriter fw = File .CreateText(filePath);
-			fw.WriteLine(version);
-			fw.WriteLine(isUsedVibe);
-			fw.WriteLine(isUsedMusic);
-			fw.WriteLine(isUsedSound);
-			fw.WriteLine(nick);
-			fw.WriteLine( DateTime.Now.ToString());
-			fw.Close();
-		}
-	}
-	Debug.Log(filePath + " file load... " + saveDate);
+    if (filePath == null )
+    {
+        initFilePath();
+    }
+    if (!File .Exists(filePath))
+    {
+        Debug.Log(filePath + " file empty..." );
+        return;
+    }
+    lock (_lock)
+    {
+        try
+        {
+            StreamReader sr = new StreamReader(filePath);
+            version = float.Parse(sr.ReadLine());
+            isUsedVibe = bool.Parse(sr.ReadLine());
+            isUsedMusic = bool.Parse(sr.ReadLine());
+            isUsedSound = bool.Parse(sr.ReadLine());
+            nick = sr.ReadLine();
+            saveDate = DateTime.Parse(sr.ReadLine());
+            sr.Close();
+        }
+        catch (IOException )
+        {
+            // load from backup
+            StreamReader sr = new StreamReader(filePath + ".bak");
+            version = float.Parse(sr.ReadLine());
+            isUsedVibe = bool.Parse(sr.ReadLine());
+            isUsedMusic = bool.Parse(sr.ReadLine());
+            isUsedSound = bool.Parse(sr.ReadLine());
+            nick = sr.ReadLine();
+            saveDate = DateTime.Parse(sr.ReadLine());
+            sr.Close();
+            // save again
+            StreamWriter fw = File .CreateText(filePath);
+            fw.WriteLine(version);
+            fw.WriteLine(isUsedVibe);
+            fw.WriteLine(isUsedMusic);
+            fw.WriteLine(isUsedSound);
+            fw.WriteLine(nick);
+            fw.WriteLine( DateTime.Now.ToString());
+            fw.Close();
+        }
+    }
+    Debug.Log(filePath + " file load... " + saveDate);
 }
 public static void saveGame()
 {
-	if (filePath == null )
-	{
-		initFilePath();
-	}
-	// backup
-	if (File .Exists(filePath))
-	{
-		FileUtil.ReplaceFile(filePath, filePath + ".bak");
-	}
-	// save
-	lock (_lock)
-	{
-		StreamWriter fw = File .CreateText(filePath);
-		fw.WriteLine(version);
-		fw.WriteLine(isUsedVibe);
-		fw.WriteLine(isUsedMusic);
-		fw.WriteLine(isUsedSound);
-		fw.WriteLine(nick);
-		fw.WriteLine( DateTime.Now.ToString());
-		fw.Close();
-	}
-	Debug.Log(filePath + " file save..." );
-	// read file for check
-	loadGame();
+    if (filePath == null )
+    {
+        initFilePath();
+    }
+    // backup
+    if (File .Exists(filePath))
+    {
+        FileUtil.ReplaceFile(filePath, filePath + ".bak");
+    }
+    // save
+    lock (_lock)
+    {
+        StreamWriter fw = File .CreateText(filePath);
+        fw.WriteLine(version);
+        fw.WriteLine(isUsedVibe);
+        fw.WriteLine(isUsedMusic);
+        fw.WriteLine(isUsedSound);
+        fw.WriteLine(nick);
+        fw.WriteLine( DateTime.Now.ToString());
+        fw.Close();
+    }
+    Debug.Log(filePath + " file save..." );
+    // read file for check
+    loadGame();
 }
 ```
 
@@ -183,10 +183,10 @@ public static void saveGame()
 ```
 void OnApplicationFocus( bool focusStatus)
 {
-	if (!focusStatus)
-	{
-		SaveData .onOption();
-	}
+    if (!focusStatus)
+    {
+        SaveData .onOption();
+    }
 }
 ```
 

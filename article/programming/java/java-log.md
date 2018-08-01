@@ -1,7 +1,7 @@
 # 자바 로그 라이브러리
 
 <!--
-description = 조금 오래된 자료
+description = 정리자료
 tag = programming, java, lib, log
 -->
 

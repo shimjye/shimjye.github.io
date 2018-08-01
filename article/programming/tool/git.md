@@ -1,7 +1,7 @@
 # Git
 
 <!--
-description = 조금 오래된 자료
+description = 정리자료
 tag = programming, tool, scm, git
 -->
 

@@ -1,7 +1,7 @@
 # 자바
 
 <!--
-description = note
+description = 정리자료
 tag = programming, java
 -->
 

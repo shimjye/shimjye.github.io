@@ -1,8 +1,8 @@
 # upload
 
 <!--
-description = note
-tag = programming, java, spring
+description = 정리자료
+tag = programming, java, spring, boot, upload
 -->
 
 ## upload-image
