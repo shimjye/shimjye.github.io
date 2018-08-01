@@ -30,3 +30,6 @@ tag = think, engineering
 - 회사내에서는 일반적으로 이슈를 만드는 것을 좋아하지 않는다. 하지만 이는 문제 해결의 과정으로 볼 때 나는 이슈를 만드는 것을 피하지 않고 하나의 방법으로 사용한다.
 - 다수의 경우 여기에서 다른 사람과 관점적 문제가 발생한다.
 - 문제가 없으면 해결방안이 없다.
+
+## 논문 개요
+- Introduction, Methods, Results, Discussion, and Conclusion
