@@ -34,7 +34,6 @@ tag = programming, design, project
 - file date rule = content_d20140101, content_d20140101_v1, content_name_d20140101_v1
 
 ## workspace
-
 - project-name
 - 10_plan
 - 20_design
@@ -47,7 +46,6 @@ tag = programming, design, project
 - 90_ref
 
 ## comment-text-rule
-
 - TODO 권장 할일
 - FIXME 반드시 할일
 - XXX 앞으로 할일

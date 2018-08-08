@@ -29,6 +29,21 @@ tag = programming, system, aws
 - create A레코드: name({name}), type(A-ipv4), value(ip)
 - create CNAME: {sub-name}.{domain-name}.com, CNAME, {name}.ap-northeast-2.elasticbeanstalk.com
 - domain godaddy(ttl 1hour) 네임서버 aws 로 변경(ttl 1day) 
+- setting root domain
+  - empty name, a-ipv4 type
+  - alias set aws resource
+
+### s3 cloudfront https
+- https://aws.amazon.com/ko/premiumsupport/knowledge-center/cloudfront-https-requests-s3/
+- origin-domain-name: s3 선택
+- redirect https
+- get head option
+- price class 200
+- cname new domain
+- AWS Certificate Manager (ACM) in the US East
+(N. Virginia) Region
+- 결과 Domain Name {cf}.cloudfront.net
+- route53 create record-set cname {cf}.cloudfront.net
 
 ### email 서비스 MX setting
 - daum 스마트워크 무료 이메일 도메인 설정
@@ -39,10 +54,21 @@ tag = programming, system, aws
 
 ## 배포관리 beanstalk, elb, auto-scaling
 ### beanstalk setting
-- web java, name: {name}
-- free tire t2.micro(free), security-group 80, 2222, rolling: all at once, keypair, monitor, network: vpc public subnet
 - chmod 400 mykey.pem
 - ssh -i mykey.pem ec2-user@1.1.1.1
+- web java, name: {name}
+- software dev, live 생성 SPRING_PROFILES_ACTIVE=live
+- instance micro, security-group default-vpn & new-sg
+- capacity 1-4 cpu 60 20
+- lb /health
+- deploy rolling addition 50% rolling health
+- network public zone-a zone-c
+
+### aws eb-loadbalancer https
+- key 생성 - dns 인증 사용 or email(도메인에 설정된 메일로 발송됨)
+- dns 인증 최대 30분 *.{domain.com} 사용
+- https://aws.amazon.com/ko/blogs/korea/new-aws-certificate-manager-deploy-ssltls-based-apps-on-aws/
+- eb loadbalancer https 설정(elb https 설정, 방화벽 설정)
 
 ### beanstalk procfile
 - java_opts -Duser.timezone=Asia/Seoul -Dfile.encoding=UTF-8 -Xms2g -Xmx2g

@@ -1,7 +1,7 @@
 # Free Software
 
 <!--
-description = 조금 오래된 자료
+description = 정리자료
 tag = it, pc, free software
 -->
 
