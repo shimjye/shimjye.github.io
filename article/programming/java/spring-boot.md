@@ -7,9 +7,9 @@ tag = programming, java, spring, boot
 
 ## maven spring boot project
 1. java project maven base pom
-- https://spring.io/guides/gs/maven/
+  - https://spring.io/guides/gs/maven/
 2. spring boot dependence
-- https://projects.spring.io/spring-boot/#quick-start
+  - https://projects.spring.io/spring-boot/#quick-start
 3. maven config
 
 ```
@@ -42,9 +42,9 @@ tag = programming, java, spring, boot
 ```
 
 5. spring boot base
-- https://spring.io/guides/gs/rest-service/
-- https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/htmlsingle/
-- https://spring.io/docs/reference
+  - https://spring.io/guides/gs/rest-service/
+  - https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/htmlsingle/
+  - https://spring.io/docs/reference
 
 ## run
 - application.yml https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-multi-profile-yaml
