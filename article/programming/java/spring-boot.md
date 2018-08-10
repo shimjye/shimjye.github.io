@@ -1,9 +1,8 @@
-# note
-
+# spring-boot
 
 <!--
 description = 정리자료
-tag = programming, design, api, user, session
+tag = programming, java, spring, boot
 -->
 
 ## maven spring boot project
@@ -20,6 +19,7 @@ tag = programming, design, api, user, session
 	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
 ```
+
 4. pom.xml
 ```
 <parent>
@@ -38,6 +38,7 @@ tag = programming, design, api, user, session
 	<version>2.9.2</version>
 </dependency>
 ```
+
 5. spring boot base
 - https://spring.io/guides/gs/rest-service/
 - https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/htmlsingle/
@@ -55,6 +56,7 @@ public class Application {
 	}
 }
 ```
+
 - pkill -f 'java -jar'
 - nohup java -jar -Dserver.port=8080 server-api-0.1.0.jar > output.log 2>&1&
 - profile -Dspring.profiles.active=local, export SPRING_PROFILES_ACTIVE=dev
@@ -108,6 +110,7 @@ public CommonsRequestLoggingFilter requestLoggingFilter() {
 	<version>1.3.0</version>
 </dependency>
 ```
+
 - http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure
 - database config /src/main/resouces/application.yml
 ```
@@ -126,6 +129,7 @@ spring:
       minimum-idle: 50
       maximum-pool-size: 50
 ```
+
 - DataSourceConfig.java (not auto-config case)
 ```
 @Configuration
@@ -188,6 +192,7 @@ public Filter characterEncodingFilter() {
 	return characterEncodingFilter;
 }
 ```
+
 - properties
 ```
 spring.http.encoding:
@@ -197,6 +202,7 @@ spring.http.encoding:
 
 server.tomcat.uri-encoding: UTF-8
 ```
+
 - java -Dfile.encoding=UTF-8 -jar
 
 ## interceptor
@@ -235,6 +241,7 @@ Filter @Component
 @SpringBootApplication
 public class Application {
 ```
+
 - CronService.java
 ```
 @Service
@@ -273,6 +280,7 @@ spring:
           starttls:
             enable: true
 ```
+
 - Mailconfig.java (not auto-config case)
 ```
 @Configuration
@@ -293,6 +301,7 @@ public class MailConfig {
 	}
 }
 ```
+
 - MailService.java
 ```
 @Service
@@ -337,6 +346,7 @@ public class EmailService {
 	<version>2.2.2</version>
 </dependency>
 ```
+
 - SwaggerConfig.java
 ```
 @Configuration
@@ -350,6 +360,7 @@ public class SwaggerConfig {
 	}
 }
 ```
+
 - WebMvcConfig.java
 - /static 경로 resource 설정
 ```
@@ -361,6 +372,7 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
 }
 
 ```
+
 - controller @ApiOperation#value(), @ApiOperation#notes(), @ApiParam#value(), @RequestParam#defaultValue(), @ApiImplicitParams#value()
 ```
 @ApiOperation(value = "value doc", notes = "note doc<br/>"
@@ -370,6 +382,7 @@ public ResultModel<List<Account>> getAccountListByUser(HttpServletRequest req) t
 	return value;
 }
 ```
+
 - model @ApiModelProperty
 - auth header https://github.com/springfox/springfox/issues/1804
 

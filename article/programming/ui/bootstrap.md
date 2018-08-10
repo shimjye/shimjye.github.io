@@ -1,4 +1,4 @@
-# note
+# bootstrap
 
 <!--
 description = 정리자료
