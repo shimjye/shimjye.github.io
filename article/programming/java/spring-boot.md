@@ -11,31 +11,33 @@ tag = programming, java, spring, boot
 2. spring boot dependence
 - https://projects.spring.io/spring-boot/#quick-start
 3. maven config
+
 ```
 <properties>
-	<maven.compiler.source>1.8<maven.compiler.source>
-	<maven.compiler.target>1.8<maven.compiler.target>
-	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <maven.compiler.source>1.8<maven.compiler.source>
+    <maven.compiler.target>1.8<maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 </properties>
 ```
 
 4. pom.xml
+
 ```
 <parent>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-parent</artifactId>
-	<version>1.5.4.RELEASE</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.5.4.RELEASE</version>
 </parent>
 <dependency>
-	<groupId>org.springframework.boot</groupId>
-	<artifactId>spring-boot-starter-web</artifactId>
-	<version>1.5.4.RELEASE</version>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>1.5.4.RELEASE</version>
 </dependency>
 <dependency>
-	<groupId>joda-time</groupId>
-	<artifactId>joda-time</artifactId>
-	<version>2.9.2</version>
+    <groupId>joda-time</groupId>
+    <artifactId>joda-time</artifactId>
+    <version>2.9.2</version>
 </dependency>
 ```
 
@@ -47,13 +49,14 @@ tag = programming, java, spring, boot
 ## run
 - application.yml https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-external-config.html#boot-features-external-config-multi-profile-yaml
 - active profiles https://docs.spring.io/spring-boot/docs/current/reference/html/howto-properties-and-configuration.html#howto-set-active-spring-profiles
+
 ```
 @SpringBootApplication
 public class Application {
-	public static void main(String[] args) throws Exception {
-		TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
-		SpringApplication.run(Application.class, args);
-	}
+    public static void main(String[] args) throws Exception {
+        TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
+        SpringApplication.run(Application.class, args);
+    }
 }
 ```
 
@@ -80,15 +83,16 @@ public class Application {
 - https://docs.spring.io/spring-boot/docs/current/reference/html/howto-logging.html
 - https://logback.qos.ch/manual/configuration.html
 - http debug log - debug log level
+
 ```
 @Bean
 public CommonsRequestLoggingFilter requestLoggingFilter() {
-	CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
-	loggingFilter.setIncludeClientInfo(true);
-	loggingFilter.setIncludeQueryString(true);
-	loggingFilter.setIncludePayload(true);
-	loggingFilter.setMaxPayloadLength(1000);
-	return loggingFilter;
+    CommonsRequestLoggingFilter loggingFilter = new CommonsRequestLoggingFilter();
+    loggingFilter.setIncludeClientInfo(true);
+    loggingFilter.setIncludeQueryString(true);
+    loggingFilter.setIncludePayload(true);
+    loggingFilter.setMaxPayloadLength(1000);
+    return loggingFilter;
 }
 ```
 
@@ -98,21 +102,23 @@ public CommonsRequestLoggingFilter requestLoggingFilter() {
 - https://github.com/brettwooldridge/HikariCP
 - useSSL=false&useUnicode=yes&characterEncoding=utf-8
 - pom.xml
+
 ```
 <dependency>
-	<groupId>mysql</groupId>
-	<artifactId>mysql-connector-java</artifactId>
-	<version>6.0.6</version>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>6.0.6</version>
 </dependency>
 <dependency>
-	<groupId>org.mybatis.spring.boot</groupId>
-	<artifactId>mybatis-spring-boot-starter</artifactId>
-	<version>1.3.0</version>
+    <groupId>org.mybatis.spring.boot</groupId>
+    <artifactId>mybatis-spring-boot-starter</artifactId>
+    <version>1.3.0</version>
 </dependency>
 ```
 
 - http://www.mybatis.org/spring-boot-starter/mybatis-spring-boot-autoconfigure
 - database config /src/main/resouces/application.yml
+
 ```
 mybatis:
   mapper-locations: classpath:latest/mapper/**/*.xml
@@ -131,74 +137,78 @@ spring:
 ```
 
 - DataSourceConfig.java (not auto-config case)
+
 ```
 @Configuration
 public class AppConfig {
-	@Bean
-	@ConfigurationProperties(prefix = "spring.datasource")
-	public DataSource firstDataSource() {
-		return DataSourceBuilder.create().build();
-	}
+    @Bean
+    @ConfigurationProperties(prefix = "spring.datasource")
+    public DataSource firstDataSource() {
+        return DataSourceBuilder.create().build();
+    }
 
-	@Bean
-	public SqlSessionFactory firstSqlSessionFactory(DataSource firstDataSource, ApplicationContext applicationContext)
-			throws Exception {
-		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(firstDataSource);
-		sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mapper/**/*.xml"));
-		return sqlSessionFactoryBean.getObject();
-	}
+    @Bean
+    public SqlSessionFactory firstSqlSessionFactory(DataSource firstDataSource, ApplicationContext applicationContext)
+            throws Exception {
+        SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
+        sqlSessionFactoryBean.setDataSource(firstDataSource);
+        sqlSessionFactoryBean.setMapperLocations(applicationContext.getResources("classpath:mapper/**/*.xml"));
+        return sqlSessionFactoryBean.getObject();
+    }
 
-	@Bean
-	public SqlSessionTemplate firstSqlSessionTemplate(SqlSessionFactory firstSqlSessionFactory) throws Exception {
-		return new SqlSessionTemplate(firstSqlSessionFactory);
-	}
+    @Bean
+    public SqlSessionTemplate firstSqlSessionTemplate(SqlSessionFactory firstSqlSessionFactory) throws Exception {
+        return new SqlSessionTemplate(firstSqlSessionFactory);
+    }
 }
 ```
 
 ## Exception ControllerAdvice
+
 ```
 @ControllerAdvice
 public class ExceptionHandler {
-	@ExceptionHandler(SomeException.class)
-	@ResponseBody
-	public ResultModel<String> handleException(SomeException e, HttpServletRequest req, HttpServletResponse resp) {
-		e.printStackTrace();
-		resp.setStatus(HttpStatus.BAD_REQUEST.value());
-		ResultModel<String> result = new ResultModel<Integer>(e.getCode(), "message");
-		return result;
-	}
+    @ExceptionHandler(SomeException.class)
+    @ResponseBody
+    public ResultModel<String> handleException(SomeException e, HttpServletRequest req, HttpServletResponse resp) {
+        e.printStackTrace();
+        resp.setStatus(HttpStatus.BAD_REQUEST.value());
+        ResultModel<String> result = new ResultModel<Integer>(e.getCode(), "message");
+        return result;
+    }
 
-	@ResponseStatus(HttpStatus.CONFLICT) // 409
-	@ExceptionHandler(OtherException.class)
-	public void handleConflict() { 
-		// Nothing to do 
-	}
+    @ResponseStatus(HttpStatus.CONFLICT) // 409
+    @ExceptionHandler(OtherException.class)
+    public void handleConflict() { 
+        // Nothing to do 
+    }
 }
 ```
 
 ## utf-8
+
 ```
 @Bean
 public HttpMessageConverter<String> responseBodyConverter() {
-	return new StringHttpMessageConverter(Charset.forName("UTF-8"));
+    return new StringHttpMessageConverter(Charset.forName("UTF-8"));
 }
 
 @Bean
 public Filter characterEncodingFilter() {
-	CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
-	characterEncodingFilter.setEncoding("UTF-8");
-	characterEncodingFilter.setForceEncoding(true);
-	return characterEncodingFilter;
+    CharacterEncodingFilter characterEncodingFilter = new CharacterEncodingFilter();
+    characterEncodingFilter.setEncoding("UTF-8");
+    characterEncodingFilter.setForceEncoding(true);
+    return characterEncodingFilter;
 }
 ```
 
 - properties
+
 ```
 spring.http.encoding:
-	force: true
-	force-request: true
-	force-response: true
+    force: true
+    force-request: true
+    force-response: true
 
 server.tomcat.uri-encoding: UTF-8
 ```
@@ -206,14 +216,15 @@ server.tomcat.uri-encoding: UTF-8
 - java -Dfile.encoding=UTF-8 -jar
 
 ## interceptor
+
 ```
 @Configuration
 @EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
-	@Override
-	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/v1/**").excludePathPatterns("/v1/auths/**");
-	}
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(new AuthInterceptor()).addPathPatterns("/v1/**").excludePathPatterns("/v1/auths/**");
+    }
 }
 ```
 
@@ -236,6 +247,7 @@ Filter @Component
 - https://stackoverflow.com/questions/30431776/using-scheduled-and-enablescheduling-but-gives-nosuchbeandefinitionexception
 - http://www.baeldung.com/spring-scheduled-tasks
 - Application.java
+
 ```
 @EnableScheduling
 @SpringBootApplication
@@ -243,17 +255,18 @@ public class Application {
 ```
 
 - CronService.java
+
 ```
 @Service
 public class CronService {
-	// daily 11:22:00
-	@Scheduled(cron = "0 10 22 * * *")
-	public void closeJob() {
-	}
-	// monthly 1st 10:22:00
-	@Scheduled(cron = "0 10 22 1 * *")
-	public void closeJob() {
-	}
+    // daily 11:22:00
+    @Scheduled(cron = "0 10 22 * * *")
+    public void closeJob() {
+    }
+    // monthly 1st 10:22:00
+    @Scheduled(cron = "0 10 22 1 * *")
+    public void closeJob() {
+    }
 }
 ```
 
@@ -266,6 +279,7 @@ public class CronService {
 - https://docs.spring.io/spring/docs/5.0.0.RELEASE/spring-framework-reference/integration.html#mail
 - spring-boot-starter-mail
 - application.yml
+
 ```
 spring:
   mail:
@@ -282,43 +296,45 @@ spring:
 ```
 
 - Mailconfig.java (not auto-config case)
+
 ```
 @Configuration
 public class MailConfig {
-	@Bean
-	public JavaMailSender getJavaMailSender() {
-		JavaMailSender mailSender = new JavaMailSenderImpl();
-		((JavaMailSenderImpl) mailSender).setHost(host);
-		((JavaMailSenderImpl) mailSender).setPort(port);
-		((JavaMailSenderImpl) mailSender).setUsername(send);
-		((JavaMailSenderImpl) mailSender).setPassword(password);
-		Properties props = ((JavaMailSenderImpl) mailSender).getJavaMailProperties();
-		props.put("mail.transport.protocol", "smtp");
-		props.put("mail.smtp.auth", "true");
-		props.put("mail.smtp.starttls.enable", "true");
-		props.put("mail.debug", "true");
-		return mailSender;
-	}
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+        JavaMailSender mailSender = new JavaMailSenderImpl();
+        ((JavaMailSenderImpl) mailSender).setHost(host);
+        ((JavaMailSenderImpl) mailSender).setPort(port);
+        ((JavaMailSenderImpl) mailSender).setUsername(send);
+        ((JavaMailSenderImpl) mailSender).setPassword(password);
+        Properties props = ((JavaMailSenderImpl) mailSender).getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.debug", "true");
+        return mailSender;
+    }
 }
 ```
 
 - MailService.java
+
 ```
 @Service
 public class EmailService {
-	private JavaMailSender mailSender;
-	public void setMailSender(JavaMailSender mailSender) {
-		this.mailSender = mailSender;
-	}
-	private void send() throws MessagingException, IOException {
-		MimeMessage message = javaMailSender.createMimeMessage();
-		MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
-		helper.setFrom("from@email.com");
-		helper.setTo("to@email.com");
-		helper.setSubject("subject");
-		helper.setText("text", true);
-		mailSender.send(message);
-	}
+    private JavaMailSender mailSender;
+    public void setMailSender(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
+    private void send() throws MessagingException, IOException {
+        MimeMessage message = javaMailSender.createMimeMessage();
+        MimeMessageHelper helper = new MimeMessageHelper(message, true, "UTF-8");
+        helper.setFrom("from@email.com");
+        helper.setTo("to@email.com");
+        helper.setSubject("subject");
+        helper.setText("text", true);
+        mailSender.send(message);
+    }
 }
 ```
 
@@ -334,52 +350,56 @@ public class EmailService {
 - swagger https://springfox.github.io/springfox/docs/current/
 - http://www.baeldung.com/swagger-2-documentation-for-spring-rest-api
 - pom.xml springfox-swagger2, springfox-swagger-ui, guava
+
 ```
 <dependency>
-	<groupId>io.springfox</groupId>
-	<artifactId>springfox-swagger2</artifactId>
-	<version>2.7.0</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger2</artifactId>
+    <version>2.7.0</version>
 </dependency>
 <dependency>
-	<groupId>io.springfox</groupId>
-	<artifactId>springfox-swagger-ui</artifactId>
-	<version>2.2.2</version>
+    <groupId>io.springfox</groupId>
+    <artifactId>springfox-swagger-ui</artifactId>
+    <version>2.2.2</version>
 </dependency>
 ```
 
 - SwaggerConfig.java
+
 ```
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-	@Bean
-	public Docket api() {
-		return new Docket(DocumentationType.SWAGGER_2)
-				.select().apis(RequestHandlerSelectors.basePackage("com.package"))
-				.paths(PathSelectors.any()).build();
-	}
+    @Bean
+    public Docket api() {
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select().apis(RequestHandlerSelectors.basePackage("com.package"))
+                .paths(PathSelectors.any()).build();
+    }
 }
 ```
 
 - WebMvcConfig.java
 - /static 경로 resource 설정
+
 ```
 @Override
 public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
-	registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
-	registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+    registry.addResourceHandler("swagger-ui.html").addResourceLocations("classpath:/META-INF/resources/");
+    registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+    registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
 }
 
 ```
 
 - controller @ApiOperation#value(), @ApiOperation#notes(), @ApiParam#value(), @RequestParam#defaultValue(), @ApiImplicitParams#value()
+
 ```
 @ApiOperation(value = "value doc", notes = "note doc<br/>"
-		+ "<br/>")
+        + "<br/>")
 @RequestMapping(method = RequestMethod.GET, value = "/v1/url")
 public ResultModel<List<Account>> getAccountListByUser(HttpServletRequest req) throws Exception {
-	return value;
+    return value;
 }
 ```
 
