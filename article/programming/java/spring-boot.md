@@ -6,11 +6,11 @@ tag = programming, java, spring, boot
 -->
 
 ## maven spring boot project
-1. java project maven base pom
+- java project maven base pom
   - https://spring.io/guides/gs/maven/
-2. spring boot dependence
+- spring boot dependence
   - https://projects.spring.io/spring-boot/#quick-start
-3. maven config
+- maven config
 
 ```
 <properties>
@@ -21,7 +21,7 @@ tag = programming, java, spring, boot
 </properties>
 ```
 
-4. pom.xml
+- pom.xml
 
 ```
 <parent>
@@ -41,7 +41,7 @@ tag = programming, java, spring, boot
 </dependency>
 ```
 
-5. spring boot base
+- spring boot base
   - https://spring.io/guides/gs/rest-service/
   - https://docs.spring.io/spring-boot/docs/2.0.0.BUILD-SNAPSHOT/reference/htmlsingle/
   - https://spring.io/docs/reference
