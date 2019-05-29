@@ -6,8 +6,8 @@ tag = programming, java
 -->
 
 ### stream
-- Integer[] seqs = areaList.stream().map(item -> item.getSeq()).toArray(Integer[]::new);
-- String param = Arrays.stream(seqs).map(i -> String.valueOf(i)).collect(Collectors.joining(",")) ;
+- Integer[] seqs = areaList.stream().map(p -> p.getSeq()).toArray(Integer[]::new);
+- String param = Arrays.stream(seqs).map(p -> String.valueOf(p)).collect(Collectors.joining(",")) ;
 - for(Area item : areaList) {
     item.setChildAreaList(childAreaList.stream().filter(p -> p.getParentSeq().equals(item.getSeq()))
                 .collect(Collectors.toList()));

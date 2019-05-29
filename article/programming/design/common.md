@@ -23,7 +23,7 @@ CREATE TABLE `code` (
   `insert_user` int(10) NOT NULL COMMENT '등록회원',
   `update_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '수정일',
   `update_user` int(10) NOT NULL COMMENT '수정회원',
-  `order_value` int(10) NOT NULL DEFAULT '0' COMMENT '순서값 asc',
+  `order_value` int(10) NOT NULL DEFAULT '0' COMMENT '순서값 desc',
   `parent_seq` int(10) NOT NULL DEFAULT '0' COMMENT '부모키',
   `depth` int(10) NOT NULL DEFAULT '0' COMMENT '깊이',
   `name` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL COMMENT '이름',
