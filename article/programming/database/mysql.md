@@ -32,7 +32,7 @@ mysql> flush privileges;
 character-set-server=utf8
 collation-server=utf8_general_ci
 init_connect=set collation_connect=utf8_general_ci
-init_connect=set name utf8
+init_connect=set names utf8
 [mysql]
 default-character-set=utf8
 [mysql_safe]

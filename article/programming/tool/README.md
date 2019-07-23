@@ -3,3 +3,4 @@
 - [article/programming/tool/eclipse.md](eclipse.md)
 - [article/programming/tool/git.md](git.md)
 - [article/programming/tool/github.md](github.md)
+- [article/programming/tool/ide.md](ide.md)

@@ -2,7 +2,7 @@
 
 <!--
 description = 정리자료
-tag = node
+tag = programming, language, node
 -->
 
 ## install nodejs, npm

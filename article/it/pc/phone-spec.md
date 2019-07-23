@@ -2,7 +2,7 @@
 
 <!--
 description = 정리자료
-tag = think
+tag = it, pc, phone
 -->
 
 ## Note4 SM-N910 & SM-N916
@@ -42,6 +42,10 @@ tag = think
 - 퀄컴 스냅드래곤 855 SM8150
 - 6 GB LPDDR4X SDRAM, 128 GB UFS 2.1 규격 내장 메모리, micro SDXC (2 TB 공식 지원)
 - 183 g USB 3.1 Gen1 Type-C
+
+## arm64
+- Note5(2015.08), S6(2015.03) 부터 64비트
+- G4(2015.04) 부터 64비트 (v10 2015.10)
 
 ## arm vs atom
 - https://www.hardwarezone.com.sg/m/tech-news-guess-which-mobile-processor-currently-leads-antutu-benchmark
