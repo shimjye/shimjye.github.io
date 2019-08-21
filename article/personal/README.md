@@ -5,6 +5,7 @@
 - [article/personal/career-simple.md](career-simple.md)
 - [article/personal/dancewith.md](dancewith.md)
 - [article/personal/dreamofwhale.md](dreamofwhale.md)
+- [article/personal/goose/](goose)
 - [article/personal/lanes.md](lanes.md)
 - [article/personal/micro-dust.md](micro-dust.md)
 - [article/personal/swclicker.md](swclicker.md)

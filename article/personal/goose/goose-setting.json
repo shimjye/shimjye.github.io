@@ -1,0 +1,12 @@
+{
+	"maintenance": "",
+	"version": {
+		"ios": "1.0",
+		"force_ios": "1.0",
+		"android": "1.0",
+		"force_android": "1.0"
+	},
+	"setting": {
+		"name": "goose"
+	}
+}
