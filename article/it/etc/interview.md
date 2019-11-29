@@ -68,6 +68,7 @@ tag = it, etc
 - spring bean scope 생명주기
 - functional interface
 - thread safe class
+- JTA
 
 ### java-vm
 - 메모리(class, stack, heap, native 메소드, PC 레지스터)
@@ -93,19 +94,32 @@ tag = it, etc
   - 인스탄스 순서: 인스턴스 변수 기본값, 인스탄스 명시적, 인스턴스 초기화 블럭, 생성자
 
 ----
+## web
+- 반응형, 적응형 웹
+- Cross-Site Scripting
+- CORS
+- http에서 https 호출
+- Single Page Application
+
 ## design
+- 디자인 패턴
 - di
+- http/1.1
 - rest
 - 멀티쓰레드 설계 경험
+- thread, process
 - 대용량 경험
 - tdd, 애자일, ci
 - 암호화/인증 방식(비밀키 공개키 해시)
 - 보안 처리 사항
+- aws 시스템 설계
 
-----
 ## database
 - 프라이머리 인덱스, 세컨더리 인덱스.
 - 저장 프로시저
 - 설계시 자주 사용하는 공통 컬럼 정보.
 - nosql vs sql.
 - connection pool 구현 고려사항.
+- transaction isolation level
+- elasticsearch
+- sharding, partitioning

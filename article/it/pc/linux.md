@@ -57,30 +57,26 @@ tag = it, pc, linux
 - 성능적으로 무거움.
 
 ----
-# qemu-work
-
-## install
-- sudo apt install qemu-kvm qemu kvm-pxe 
-- sudo apt install virt-manager virt-viewer libvirt-bin
-- pxe-rtl839.bin guest 운영체제 이더넷 카드
-	- sudo apt install kvm-pxe
+# qemu
 
 ## create
 - $ qemu-img create -f qcow2 ubuntu.qcow 100G
-- $ qemu-system-xi386 -hda ubuntu.img -boot d -cdrom ubuntu-0.0.0.iso -m 2048
-- qemu-system-x86_64
+- $ qemu-system-x86_64 -hda ubuntu.img -boot d -cdrom ubuntu-0.0.0.iso -m 2048
 - windows 7 최소요구사항 (32bit 1G ram, 16G hdd), (64bit 2G ram, 20G hdd)
-
-## run
-- $ qemu -hda disk.img
 
 ## limbo
 - android qemu
 - https://github.com/limboemu/limbo/wiki
 
+## qemu-android
+- apt-get install qemu
+- win7 https://savegyd.com/install-windows-7-img-on-android-using-limbo/
+- win10 https://savegyd.com/install-windows-10-on-android-using-limbo/
+- qemu-system-x86_64 -smp 4 -hda /sdcard/__shimjye/pub/Win7.qcow2 -vnc :1 -m 4G -cpu SandyBridge
+
 ## ref
 - https://www.unixmen.com/how-to-install-and-configure-qemu-in-ubuntu/
-- https://savegyd.com/install-windows-10-on-android-using-limbo/
+- arm-windows https://winaero.com/blog/install-windows-10-arm-qemu/
 
 ----
 # linux-work

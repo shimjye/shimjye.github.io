@@ -44,6 +44,7 @@ tag = programming, system, aws
 (N. Virginia) Region
 - 결과 Domain Name {cf}.cloudfront.net
 - route53 create record-set cname {cf}.cloudfront.net
+- www non-www https://simpleit.rocks/web/hostings/redirect-http-to-https-and-www-to-non-www-with-aws-s3-bucket-cloudfront-route-53-and-a-custom-domain/
 
 ### email 서비스 MX setting
 - daum 스마트워크 무료 이메일 도메인 설정
