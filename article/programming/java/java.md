@@ -12,6 +12,8 @@ tag = programming, java
     item.setChildAreaList(childAreaList.stream().filter(p -> p.getParentSeq().equals(item.getSeq()))
                 .collect(Collectors.toList()));
 }
+- filter
+String seqStr = list.stream().filter(f -> f.getContentTypeCode().equals(Const.CONTENT_TYPE_STORY)).map(p -> p.getSeq()).toArray(Integer[]::new);
 - distict
 orderGroup.setOrderItems(new ArrayList<OrderItem>(orderGroup.getOrderItems().stream()
         .collect(Collectors.toMap(OrderItem::getItemSeq, p -> p, (p, q) -> p)).values()));

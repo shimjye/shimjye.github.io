@@ -24,3 +24,22 @@ sudo apt-get install -y nodejs
 - https://github.com/webpack/webpack
 - npm install --save-dev webpack
 
+## install mvn
+- $ brew install nvm
+- .zshrc
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+```
+# Node 버전 설치
+$ nvm install <version>  # ex> nvm install 8.9.4
+
+# 설치된 Node 버전 목록 확인
+$ nvm ls  
+
+# 사용할 Node 설정  
+$ nvm use <version>  # ex> nvm use 8.9.4  
+$ nvm use <alias>  # ex> nvm use default
+
+# 사용할 alias 설정
+$ nvm alias <alias> <version>  # ex> nvm alias test-v 8.9.4
+```

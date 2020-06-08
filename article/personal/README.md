@@ -2,6 +2,7 @@
 
 - [article/personal/bicyclebell.md](bicyclebell.md)
 - [article/personal/bow.md](bow.md)
+- [article/personal/bulldog/](bulldog)
 - [article/personal/career-simple.md](career-simple.md)
 - [article/personal/cent-space-shoot.md](cent-space-shoot.md)
 - [article/personal/dancewith.md](dancewith.md)

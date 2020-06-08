@@ -1,5 +1,6 @@
 # article/think/engineering
 
+- [article/think/engineering/game-test.md](game-test.md)
 - [article/think/engineering/problem.md](problem.md)
 - [article/think/engineering/slow-develope.md](slow-develope.md)
 - [article/think/engineering/study.md](study.md)
