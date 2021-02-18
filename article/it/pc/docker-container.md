@@ -20,8 +20,11 @@ sudo usermod -aG docker ${USER}
 ### mysql
 - install mysql 5.7(aws) docker-local https://dev.mysql.com/doc/refman/5.7/en/docker-mysql-getting-started.html
 ```
+docker run --name mysql1 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=12345678 -d mysql:8.0.20 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
 docker run --name=mysql1 -p 3306:3306 -d mysql/mysql-server:5.7
 docker logs mysql1 2>&1 | grep GENERATED
+
 docker exec -it mysql1 mysql -uroot -p
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
 mysql> use mysql;
