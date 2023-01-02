@@ -7,5 +7,6 @@
 - [article/think/myself/pipe-line.md](pipe-line.md)
 - [article/think/myself/privacy-simple.md](privacy-simple.md)
 - [article/think/myself/privacy.md](privacy.md)
+- [article/think/myself/review-2022.md](review-2022.md)
 - [article/think/myself/small-succ.md](small-succ.md)
 - [article/think/myself/writing.md](writing.md)
