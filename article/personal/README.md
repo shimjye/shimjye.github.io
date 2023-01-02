@@ -11,5 +11,7 @@
 - [article/personal/goose.md](goose.md)
 - [article/personal/lanes.md](lanes.md)
 - [article/personal/micro-dust.md](micro-dust.md)
+- [article/personal/rainy-season/](rainy-season)
+- [article/personal/sootnoon/](sootnoon)
 - [article/personal/swclicker.md](swclicker.md)
 - [article/personal/swtopgun.md](swtopgun.md)
