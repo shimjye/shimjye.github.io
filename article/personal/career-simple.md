@@ -6,15 +6,18 @@ tag = personal, career
 # Career
 -->
 
-    - Java를 중심으로 API 서버, 데몬 서버, 웹 서버 개발을 수행.
-    - 기획, 설계, 개발, 테스트, 유지보수 등 전체 업무에 경험.
-    - 기술적으로 웹, 서버, 디비, 모바일, 설계, 공학.
-    - 업무적으로 SI, 연구소, 포털, 커머스, O2O, 서비스운영 의 다양한 경험의 풀스택 개발자.
-    - 다른 사람에게 지지 않는 강점은 열정이라 생각하고.
-    - 옳은 방향으로 개발하자 라는 설계 철학과 서비스 중심 개발의 개발 철학.
+    - 목표: 세상에 의미있는 개발, 개인과 업무에 있어 발전하는 즐거움의 개발을 목표.
+    - Java를 중심으로 API 서버, 어플리케이션 서버, 웹 서버, 모바일 앱서버 개발을 수행.
+    - 업무적으로 포털, 커머스, O2O, 서비스운영 의 다양한 경험의 풀스택 개발자. 
+    - 옳은 방향으로 개발하자라는 설계 철학과 서비스 중심 개발의 개발 철학. 
+    - 경력간 다양한 설계 경험으로 구조 개발 리a딩에 강점.
 
-# Experience (~ 2020.06. 11Y 5M)
-    - 디자이너주식회사 정규직 2019.07.01 ~ (12M)
+# Experience (~ 2023.01. 13Y 2M)
+    - 데이오프컴퍼니 팀장 정규직 2022.12.01 ~
+    - 하나투어 정규직 2021.10 ~ 2022.11 (13M)
+    - 째깍악어 팀장 정규직 2021.04 ~ 2021.08 (5M)
+    - 티몬 정규직 2020.08 ~ 2021.04 (9M)
+    - 디자이너주식회사 팀장 정규직 2019.07.01 ~ (12M)
     - 야놀자 정규직 2015.04.27 ~ 2019.05.15 (42M 휴직6M)
     - 싸이월드 프리랜서 2014.08.25 ~ 2014.12.24 (4M)
     - 이마트 신세계(전보 조치) 주임 2013.01.02 ~ 2014.02.21 (14M)
@@ -23,8 +26,26 @@ tag = personal, career
     - wiseitech 주임 2006.5.29 ~ 2007.12.31 (19M)
     - 다날소프트 사원 2005.11.1 ~ 2006.3.31 (5M)
 
-## 디자이너 주식회사 2019.07.01 ~ (12M)
-- 2019.07.01 ~ 소규모 스타트업, 기부앱 서비스 dolgo 운영 개발, 관리자 개발, 홈페이지 개발 dolgo.org. 서비스v2 개발.
+## 데이오프컴퍼니 2022.12 ~
+- spring-framework, kotlin, mysql, aws
+
+## 하나투어 2021.10 ~ 2022.11 (13M)
+- spring-framework, oracle, elasticsearch, jira, confluence
+- 상품업무 운영 개발, Back-end API 유지보수, 백오피스 UI 와 백오피스 API 서버 유지보수 개발.
+
+## 째깍악어 2021.04 ~ 2021.08 (5M)
+- 2021.04 ~ 2021.08 앱서비스 api 서버 개발 유지보수
+- php-CodeIgniter, mysql, aws, jira, confluence
+- 째깍악어 부모님앱, 선생님앱, 관리자 개발 및 유지보수 리드. 코드리뷰 리드. 장애처리 리드. 개발 프로세스 진행
+
+## 티몬 2020.08 ~ 2021.04 (9M)
+- 2020.08 ~ 2021.04 admin-dashboard 개발 유지보수, UI, api 개발
+- java, mysql, spring, mybatis, reactjs, webpack
+- admin-dashboard의 차트, 그리드 UI 및 api 개발.
+- 표준 reactjs 구조가 없는 시점에 기본적인 webpack-reactjs 구조 설계 및 개발.
+
+## 디자이너 주식회사 2019.07 ~ 2020.08 (12M)
+- 2019.07 ~ 2020.08 개발팀 팀장, 소규모 스타트업, 기부앱 서비스 dolgo 운영 개발, 관리자 개발, 홈페이지 개발 dolgo.org. 서비스v2 개발.
 - java, mysql, spring-boot, aws, pg, firebase
 - REST API, WEB, pg결제, 앱 연동 서버 전체, aws 시스템 관리, admin 개발.
 
@@ -92,21 +113,17 @@ tag = personal, career
 
 # Skills
     - Major Tech
-        - Java api server
-        - Java daemon server
-        - Java web-applicatioin
+        - Java api, web, apllication server
         - DB sql query
         - Software engineering
         - Aws cloud service
+	- Software architecture
     - Minor Tech
-        - Software architecture
-        - Elasticsearch
-        - Mongodb
-        - Redis cache
+        - Elasticsearch-content
+        - Redis-cache
+	- React-nodejs
         - PHP-CodeIgniter
         - C#, ASP
         - Android-Java, Flutter
-        - Unity3d game-engine
-        - Google Firebase
 
-- 2020년 06월 22일
+- 2023년 01월 02일
