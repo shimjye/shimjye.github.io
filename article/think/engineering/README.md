@@ -1,9 +1,11 @@
 # article/think/engineering
 
+- [article/think/engineering/ai-chatgpt.md](ai-chatgpt.md)
 - [article/think/engineering/app-package.md](app-package.md)
 - [article/think/engineering/code-refactoring.md](code-refactoring.md)
 - [article/think/engineering/fb-down.md](fb-down.md)
 - [article/think/engineering/game-test.md](game-test.md)
+- [article/think/engineering/keyboard-for-developer.md](keyboard-for-developer.md)
 - [article/think/engineering/kotlin-start.md](kotlin-start.md)
 - [article/think/engineering/problem.md](problem.md)
 - [article/think/engineering/searchable-develop.md](searchable-develop.md)
