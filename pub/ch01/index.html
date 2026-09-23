@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101827"><title>겹친 도시 · 잔광의 기록</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="journal"><div class="eyebrow">A CITY BETWEEN WORLDS</div><h1>겹친 도시</h1><p class="subtitle">잔광의 기록</p><div class="rule"></div><p>익숙한 거리 너머,<br>상상이 현실이 되는 순간.</p><div id="desktop-summary"></div><div class="journal-foot">HOLD · MOVE · DISCOVER<br><span>자동 공격 + 회피 + 수집</span></div></aside>
+    <main id="game-shell">
+      <header><div><span class="eyebrow" id="area-label">시작 구역</span><h2 id="place">잔광 골목</h2></div><div class="wallet"><span>COIN</span><strong id="coins">0</strong></div></header>
+      <div class="vitals"><div class="health-label"><span>생명력</span><strong id="hp">100 / 100</strong><span id="phase">탐색 대기</span></div><div class="health-track"><div id="health-fill"></div></div></div>
+      <button id="next-goal" class="next-goal">다음 목표 · 첫 무기 강화 <span>›</span></button>
+      <section id="field" aria-label="게임 전장"><div id="phaser"></div><div class="field-top"><span id="battle-status">현실과 상상의 경계</span><button id="escape" hidden>도망</button></div><div id="idle"><span class="eyebrow">EXPLORE THE OTHER SIDE</span><h3 id="idle-title">거리의 잔광을 따라서</h3><p id="idle-description">균열 너머의 존재를 찾으세요.<br>공격은 자동으로 이어집니다.</p><button id="explore" class="primary">탐색 시작 <span>→</span></button><small id="chance">첫 탐색은 반드시 조우합니다</small></div><div id="toast" role="status" aria-live="polite"></div></section>
+      <div class="control-deck"><button id="special-left" class="special"><b>✦</b><span>집중 파동</span><small>준비</small></button><div id="move-pad" role="slider" tabindex="0" aria-label="좌우 이동: 드래그 또는 방향키" aria-orientation="horizontal" aria-valuemin="25" aria-valuemax="375" aria-valuenow="200"><div>‹ <span>HOLD & MOVE</span> ›</div><small>누른 채 좌우로 이동</small></div><button id="special-right" class="special"><b>◎</b><span>충격파</span><small>첫 승리 목표 보상</small></button></div>
+      <nav aria-label="게임 메뉴"><button data-panel="equipment"><span>⌁</span>장비</button><button data-panel="cards"><span>▧</span>카드</button><button data-panel="goals"><span>◇</span>목표 <i id="goal-dot"></i></button><button data-panel="map"><span>⌘</span>지도</button><button data-panel="save"><span>◷</span>저장</button></nav>
+      <div id="save-status" role="status">로컬 자동 저장 · 15초 간격</div>
+    </main>
+    <aside id="panel" class="panel" aria-labelledby="panel-title" hidden><div class="panel-heading"><div><span class="eyebrow">FIELD JOURNAL</span><h2 id="panel-title" tabindex="-1">장비</h2></div><button id="close-panel" aria-label="메뉴 닫기">✕</button></div><div id="panel-body"></div></aside>
+  </div>
+  <dialog id="recovery" aria-labelledby="recovery-title"><h2 id="recovery-title">저장 기록 확인</h2><p id="recovery-text"></p><p>새 게임을 저장하면 현재 기록을 교체합니다. 읽지 못한 원본은 복구용으로 보존합니다.</p><button id="retry-load">다시 읽기</button><button id="new-game">새 게임 시작</button></dialog>
+  <script src="./vendor/phaser.min.js"></script><script type="module" src="./src/main.js"></script>
+</body>
+</html>
